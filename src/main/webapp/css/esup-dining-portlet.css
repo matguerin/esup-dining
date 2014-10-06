@@ -151,3 +151,31 @@
 .dining-portlet.pc .starred-icon {
 	color: #E5DD6E;
 }
+
+.dining-portlet.pc legend {
+    font-size: 1.2em;
+    color: #555;
+    font-weight: bold;
+    margin: 0;
+}
+
+.dining-portlet.pc label {
+    font-weight: normal;
+    margin-right: 1em;
+}
+.dining-portlet.pc h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+.dining-portlet.pc form {
+	padding: 5px;
+}
+.dining-portlet.pc fieldset {
+	margin-bottom: 0.5em;
+}
+.dining-portlet.pc input[type="submit"] {
+	display: block;
+	margin-bottom: 1em;
+}
