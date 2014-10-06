@@ -263,7 +263,7 @@
 
 								if(opening[i].charAt(j) == "1") {
 									tableNode.innerHTML = "O";
-									tableNode.className="is-openned";
+									tableNode.className="is-opened";
 								} else {
 									tableNode.innerHTML = "X";	
 									tableNode.className="is-closed";
