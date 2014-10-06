@@ -4,7 +4,7 @@
 
 <c:if test="${not empty user}">
 
-	<h1><spring:message code="edit.title"/></h1>
+	<!--<h1><spring:message code="edit.title"/></h1>-->
 
 	<a href="<portlet:renderURL portletMode="edit"/>" class="icn-fam icn-fam-back">
 		<spring:message code="edit.admin.back"/>
@@ -19,15 +19,14 @@
 		Stats
 	</a>
 
-<br/>
+	<br/>
 	
-<portlet:actionURL var="setAreas">
-  <portlet:param name="action" value="setDefaultArea"/>
-</portlet:actionURL>
+	<portlet:actionURL var="setAreas">
+  		<portlet:param name="action" value="setDefaultArea"/>
+	</portlet:actionURL>
 
-<h1>
-Choose your feed
-</h1>		
+	<div>
+		<h3>Choose your feed</h3>		
 		<portlet:actionURL var="urlFlux">
 		  <portlet:param name="action" value="urlFeed"/>
 		</portlet:actionURL>
@@ -61,47 +60,47 @@ Choose your feed
 			
 				
 		</form>
-		<hr/>
-		
-		<div>
-	<form method="post" action="${setAreas}" class="clearfix"> 
+	</div>	
+	<div>
+		<h3>Default area</h3>
+		<form method="post" action="${setAreas}" class="clearfix"> 
 	
-		<c:forEach var="areaValue" items="${areaList}" varStatus="status">
-			<label for="field-areas-${status.index}">
-				<input type="checkbox" value="${areaValue}" name="chkArea[]" id="field-areas-${status.index}"
-					<c:forEach var="areaDb" items="${defaultArea}">
-						<c:if test="${areaDb == areaValue}">checked="checked"</c:if>
-					</c:forEach>
-				>
-				${areaValue}
-			</label>
-		</c:forEach>
+			<c:forEach var="areaValue" items="${areaList}" varStatus="status">
+				<label for="field-areas-${status.index}">
+					<input type="checkbox" value="${areaValue}" name="chkArea[]" id="field-areas-${status.index}"
+						<c:forEach var="areaDb" items="${defaultArea}">
+							<c:if test="${areaDb == areaValue}">checked="checked"</c:if>
+						</c:forEach>
+					>
+					${areaValue}
+				</label>
+			</c:forEach>
 		
-		<br/>
-		<c:if test="${areaSubmit}">
-			<label class="is-valid icn-fam icn-fam-valid">
-				<spring:message code="edit.msg.success"/>
-			</label>
-		</c:if>
+			<br/>
+			<c:if test="${areaSubmit}">
+				<label class="is-valid icn-fam icn-fam-valid">
+					<spring:message code="edit.msg.success"/>
+				</label>
+			</c:if>
 		
-		<input type="submit"/>
-	</form>
-</div>
+			<input type="submit"/>
+		</form>
+	</div>
 
-<hr/>
+	<hr/>
 		
-		<portlet:actionURL var="forceFeedUpdate">
-		  <portlet:param name="action" value="forceFeedUpdate"/>
-		</portlet:actionURL>
+	<portlet:actionURL var="forceFeedUpdate">
+	  <portlet:param name="action" value="forceFeedUpdate"/>
+	</portlet:actionURL>
 		
-		<p>
-			<a href="${forceFeedUpdate}" class="btn btn-primary">
-				<spring:message code="edit.admin.forceupdate"/>
-			</a>
-		</p>
-		<c:if test="${not empty updateFeed}">
-			${updateFeed}
-		</c:if>
+	<p>
+		<a href="${forceFeedUpdate}" class="btn btn-primary">
+			<spring:message code="edit.admin.forceupdate"/>
+		</a>
+	</p>
+	<c:if test="${not empty updateFeed}">
+		${updateFeed}
+	</c:if>
 		
 </c:if>
 <c:if test="${not empty user}">
