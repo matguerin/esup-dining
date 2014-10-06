@@ -101,14 +101,40 @@
 		</c:if>		
 		<%-- end short desc --%>
 
-			<%-- Start photo block --%>
-			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 ta-center">
-				<c:if test="${not empty restaurant.photo.src}">
-					<img src="${restaurant.photo.src}" alt="${restaurant.photo.alt}" />
-				</c:if>	
+		<%-- start map --%>			
+			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+				<c:if test="${not empty restaurant.lat and not empty restaurant.lon}">
+					<h2><spring:message code="restaurant.msg.map"/></h2>
+					
+					<div id="map-canvas"></div>
+					<script type="text/javascript">
+					function initialize() {
+					    var myLatlng = new google.maps.LatLng(${restaurant.lat}, ${restaurant.lon});
+						var mapOptions = {
+					      center: myLatlng,
+					      zoom: 14,
+					      mapTypeId: google.maps.MapTypeId.ROADMAP
+					    };
+					    var map = new google.maps.Map(document.getElementById("map-canvas"),
+					        mapOptions);
+					    var marker = new google.maps.Marker({
+					        position: myLatlng,
+					        map: map,
+					        title:"${restaurant.title}",
+					        icon: "<%= renderRequest.getContextPath() + "/images/pin_resto.png" %>"
+					    });
+		    			window.onresize = function() {
+							map.setCenter(myLatlng);
+						}
+					  }
+					  google.maps.event.addDomListener(window, 'load', initialize);
+					</script>
+				</c:if>			
 			</div>
-			<%-- end photo block --%>
+			<%-- end map --%>
+
 			<div class="col-xs-12 col-sm-6 col-md-8 col-lg-8">
+				<h2><spring:message code="restaurant.msg.overview"/></h2>
 				<%-- start description --%>
 				<c:if test="${not empty restaurant.description}">
 					<p>
@@ -190,44 +216,19 @@
 				</c:if>
 
 			</div>
-
-			<%-- start table opening --%>			
-			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-				<c:if test="${not empty restaurant.lat and not empty restaurant.lon}">
-					<h2>
-						<spring:message code="restaurant.msg.map"/>
-					</h2>
-					
-					<div id="map-canvas"></div>
-					<script type="text/javascript">
-					function initialize() {
-					    var myLatlng = new google.maps.LatLng(${restaurant.lat}, ${restaurant.lon});
-						var mapOptions = {
-					      center: myLatlng,
-					      zoom: 14,
-					      mapTypeId: google.maps.MapTypeId.ROADMAP
-					    };
-					    var map = new google.maps.Map(document.getElementById("map-canvas"),
-					        mapOptions);
-					    var marker = new google.maps.Marker({
-					        position: myLatlng,
-					        map: map,
-					        title:"${restaurant.title}",
-					        icon: "<%= renderRequest.getContextPath() + "/images/pin_resto.png" %>"
-					    });
-		    			window.onresize = function() {
-							map.setCenter(myLatlng);
-						}
-					  }
-					  google.maps.event.addDomListener(window, 'load', initialize);
-					</script>
-				</c:if>			
-			</div>
-			<%-- end table opening --%>
-			<%-- start map --%>
+			<%-- Start photo block --%>
 			<div class="col-xs-12 col-sm-6 col-md-8 col-lg-8">
+				<c:if test="${not empty restaurant.photo.src}">
+					<img src="${restaurant.photo.src}" alt="${restaurant.photo.alt}" />
+				</c:if>	
+			</div>
+			<%-- end photo block --%>
+
+			
+			<%-- start table opening --%>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
 				<c:if test="${not empty restaurant.opening}">
-					<h2>Jours d'ouverture</h2>
+					<h2><spring:message code="restaurant.msg.opening"/></h2>
 					<table id="opening" class="table table-striped">
 						<tr>
 							<th></th>
@@ -276,7 +277,7 @@
 					</script>
 				</c:if>								
 			</div>
-			<%-- end map --%>
+			<%-- end table opening --%>
 	</c:if>
 
 <%@ include file="/WEB-INF/jsp/footer.jsp"%>
