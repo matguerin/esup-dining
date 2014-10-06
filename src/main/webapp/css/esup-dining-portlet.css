@@ -53,6 +53,12 @@
 	.dining-portlet.pc .navbar-default .navbar-nav > li > span {
 		padding: 15px;
 	}
+	
+	.dining-portlet.pc .data-source {
+		display: block;
+		clear: both;
+		margin-top: 5px;
+	}
 
 /* icon set */
 
