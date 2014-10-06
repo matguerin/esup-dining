@@ -77,6 +77,13 @@
 .dining-portlet.pc #opening th {
 	font-weight: bold;
 }
+.dining-portlet.pc #opening tr th {
+	text-align: center;
+	background-color: #f9f9f9;
+}
+.dining-portlet.pc #opening tbody tr th {
+	text-align: center;
+}
 
 
 .dining-portlet.pc .tab-header {
@@ -118,8 +125,11 @@
 	font-weight: bold;
 }
 
+.dining-portlet.pc table td {
+	border-bottom: thin solid #ddd !important
+}
 .dining-portlet.pc table .is-opened {
-	background: #A6FFDE;
+	background: #9FFCA0;
 }
 
 .dining-portlet.pc table .is-closed {
