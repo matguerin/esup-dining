@@ -22,7 +22,7 @@
 <script type="text/javascript">$().carousel || document.write('<script src="${pageContext.servletContext.contextPath}/js/bootstrap.min.js"><\/script>')</script>
 
 <%-- Portlet container --%>
-<div class="pc sm">
+<div class="pc sm dining-portlet">
 
 
 <script type="text/javascript">

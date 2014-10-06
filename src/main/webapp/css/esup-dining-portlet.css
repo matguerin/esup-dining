@@ -17,46 +17,46 @@
  */
 /* I. General styles */
 
-	.pc .row,
-	.portlet-container .row {
+	.dining-portlet.pc .row,
+	.dining-portlet.portlet-container .row {
 		margin-left: 0 !important;
 		margin-right: 0 !important;
 	}
 
-	img {
+	.dining-portlet.pc img {
 		max-width: 100%;
 	}
 	/* max-width: 100%; trick is buggy with sprite images */
-	#map-canvas img,
-	.sprite {
+	.dining-portlet.pc #map-canvas img,
+	.dining-portlet.pc .sprite {
 		max-width: none;
 	}
-	#map-canvas {
+	.dining-portlet.pc #map-canvas {
 		width: 100%;
 		height: 350px;
 	}
 	
-	.ta-center {
+	.dining-portlet.pc .ta-center {
 		text-align: center;
 	}
-	.ta-right {
+	.dining-portlet.pc .ta-right {
 		text-align: right;
 	}
-	.ta-left {
+	.dining-portlet.pc .ta-left {
 		text-align: left;
 	}
-	.get-located {
+	.dining-portlet.pc .get-located {
 		margin-top: 10px;
 		font-size: 1.4em;
 	}
 
-	.navbar-default .navbar-nav > li > span {
+	.dining-portlet.pc .navbar-default .navbar-nav > li > span {
 		padding: 15px;
 	}
 
 /* icon set */
 
-.icn-fam {
+.dining-portlet.pc .icn-fam {
 	background-position: 0 center;
 	background-repeat: no-repeat;
 	padding-left: 20px !important;
@@ -64,21 +64,21 @@
 
 /* Don't look beyond this point... it looks horrible ! */
 
-#opening {
+.dining-portlet.pc #opening {
 	width: 100%;
 	text-align: center;
 }
-#opening th {
+.dining-portlet.pc #opening th {
 	font-weight: bold;
 }
 
 
-.tab-header {
+.dining-portlet.pc .tab-header {
 	display: table;
 	padding: 0;
 	width: 100%;
 }
-.tab-header li {
+.dining-portlet.pc .tab-header li {
 	display: table-cell;
 	padding: 0;
 	margin: 0;
@@ -86,15 +86,15 @@
 	text-align: center;
 	background: #DDD;
 }
-.tab-header a {
+.dining-portlet.pc .tab-header a {
 	padding: .5em 0;
 	display: block;
 }
-.tab-header .ui-state-active {
+.dining-portlet.pc .tab-header .ui-state-active {
 	background: #FFF;
 }
 
-.accordion-title {
+.dining-portlet.pc .accordion-title {
 	padding: .5em 1em;
 	background: #DDD;
 	border-bottom: 2px solid #AAA;
@@ -102,32 +102,32 @@
 
 /* State CSS */
 
-.is-invalid {
+.dining-portlet.pc .is-invalid {
 	color: #F00 !important;
 	font-weight: bold;
 }
 
-.is-valid {
+.dining-portlet.pc .is-valid {
 	color: #0F0 !important;
 	font-weight: bold;
 }
 
-table .is-openned {
+.dining-portlet.pc table .is-openned {
 	background: #A6FFDE;
 }
 
-table .is-closed {
+.dining-portlet.pc table .is-closed {
 	background: #FFA6AA;
 }
 
-.smart-choice {
+.dining-portlet.pc .smart-choice {
 	background: #00FF6A;
 }
-.warning {
+.dining-portlet.pc .warning {
 	background: #FFD859;
 }
 
-[data-closed] a:before {
+.dining-portlet.pc [data-closed] a:before {
 	display: inline-block;
 	vertical-align: middle;
 	width: 16px;
@@ -138,16 +138,16 @@ table .is-closed {
 
 /* Theme relative CSS */ 
 
-.icn-fam-back       { background-image: url("../images/resultset_previous.png"); }
-.icn-fam-meal       { background-image: url("../images/script.png");             }
-.icn-fam-fav        { background-image: url("../images/star.png");               }
-.icn-fam-infos      { background-image: url("../images/information.png");        }
-.icn-fam-valid      { background-image: url("../images/accept.png");             }
-.icn-fam-invalid    { background-image: url("../images/exclamation.png");        }
-.icn-fam-disability { background-image: url("../images/disability.png");         }       
-.icn-fam-wifi	   	{ background-image: url("../images/wifi.png");         		 }      
-.icn-fam-stats	   	{ background-image: url("../images/stats.png");         		 }       
+.dining-portlet.pc .icn-fam-back       { background-image: url("../images/resultset_previous.png"); }
+.dining-portlet.pc .icn-fam-meal       { background-image: url("../images/script.png");             }
+.dining-portlet.pc .icn-fam-fav        { background-image: url("../images/star.png");               }
+.dining-portlet.pc .icn-fam-infos      { background-image: url("../images/information.png");        }
+.dining-portlet.pc .icn-fam-valid      { background-image: url("../images/accept.png");             }
+.dining-portlet.pc .icn-fam-invalid    { background-image: url("../images/exclamation.png");        }
+.dining-portlet.pc .icn-fam-disability { background-image: url("../images/disability.png");         }       
+.dining-portlet.pc .icn-fam-wifi	   	{ background-image: url("../images/wifi.png");         		 }      
+.dining-portlet.pc .icn-fam-stats	   	{ background-image: url("../images/stats.png");         		 }       
 
-.starred-icon {
+.dining-portlet.pc .starred-icon {
 	color: #E5DD6E;
 }
